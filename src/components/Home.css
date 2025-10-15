@@ -1,0 +1,283 @@
+/* ===== Tổng thể ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body, html {
+  scroll-behavior: smooth;
+}
+
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed !important;    /* 🔥 Cố định thanh menu */
+  top: 0;              /* Nằm sát mép trên */
+  left: 0;
+  width: 100%;         /* Chiếm toàn chiều ngang */
+  z-index: 999;        /* Luôn nổi trên mọi thứ */
+  background: white;   /* Màu nền (chọn tuỳ thích) */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.navbar-logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+}
+
+.logo-highlight {
+  color: #1a73e8;
+}
+
+/* Links ở giữa */
+.navbar-links {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #1a73e8;
+}
+
+/* Hành động bên phải */
+.navbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-login, .btn-register {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.btn-login {
+  background: transparent;
+  border: 1px solid #1a73e8;
+  color: #1a73e8;
+}
+
+.btn-login:hover {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.btn-register {
+  background: #1a73e8;
+  color: white;
+}
+
+.btn-register:hover {
+  background: #145dbf;
+}
+
+/* ===== Hero Section ===== */
+
+.hero-section {
+  position: relative;
+  background-image: url("https://ocafe.net/wp-content/uploads/2024/10/anh-nen-dep-4.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border: none;
+  background: #1a73e8;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #0f5ed7;
+  transform: scale(1.05);
+}
+
+/* ===== Features Section ===== */
+.features-section {
+  padding: 80px 10%;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.feature-card {
+  background: white;
+  width: 280px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+  font-size: 40px;
+  color: #1a73e8;
+  margin-bottom: 15px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  display: fixed;
+  
+  width: 100%;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👉 Căn giữa toàn bộ nội dung */
+  text-align: center;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3px;
+  z-index: 998; /* Đảm bảo footer luôn ở trên cùng */
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer p {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 6px;
+  transition: all 0.3s ease;
+}
+
+.footer p:hover {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/* ===== Text composive ===== */
+.features-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9fbfd;
+}
+
+.features-section h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card i {
+  font-size: 40px;
+  color: #2575fc;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}

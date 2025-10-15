@@ -1,0 +1,78 @@
+/* ===== THANH MENU ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  color: #fff;
+  padding: 14px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.navbar-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar-logo:hover {
+  color: #ffe600;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links a {
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ffe600;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-actions button {
+  border: none;
+  background: #fff;
+  color: #0077ff;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar-actions .register-btn {
+  background: #ffe600;
+  color: #000;
+}
+
+.navbar-actions button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== NỘI DUNG TRANG ===== */
+.page-content {
+  margin-top: 90px; /* chừa chỗ cho thanh menu cố định */
+  padding: 20px;
+}
