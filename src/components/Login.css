@@ -1,83 +1,191 @@
-.login-page {
-  height: 100vh;
-  background: linear-gradient(135deg, #6c09d5, #119cec);
+/* Login Styles */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* Thẻ chứa form */
-.login-card {
+.login-form {
   background: white;
-  padding: 40px 50px;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  width: 400px;
-  text-align: center;
+  padding: 50px 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Tiêu đề */
-.title {
-  font-size: 28px;
-  font-weight: 600;
+.login-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #333;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.form-group {
   margin-bottom: 25px;
 }
 
-/* Form chính */
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
 }
 
-.login-form input {
-  padding: 12px 15px;
+.form-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
   border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
   outline: none;
-  transition: 0.3s;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.login-form input:focus {
-  border-color: #2575fc;
-  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+.form-group input::placeholder {
+  color: #999;
 }
 
-/* Nút đăng nhập */
-.login-form button {
-  background: #2575fc;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #666;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.login-form button:hover {
-  background: #1a5edb;
+.remember-me input[type="checkbox"] {
+  width: auto;
+  margin: 0;
 }
 
-/* Link đăng ký */
-.register-link {
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.register-link a {
-  color: #2575fc;
+.forgot-password {
+  color: #667eea;
   text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.register-link a:hover {
+.forgot-password:hover {
+  color: #764ba2;
   text-decoration: underline;
 }
-.fa-users h3{
-  font-size: 40px;
-  color: #2575fc;
-  margin-bottom: 15px;
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.login-footer p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.register-link {
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+  
+  .login-form {
+    padding: 40px 30px;
+  }
+  
+  .login-header h2 {
+    font-size: 2rem;
+  }
+  
+  .form-options {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .remember-me {
+    justify-content: center;
+  }
+  
+  .forgot-password {
+    text-align: center;
+  }
 }

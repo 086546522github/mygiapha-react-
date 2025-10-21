@@ -1,0 +1,91 @@
+/* src/components/BannerCustomization.css */
+.banner-customization {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner-customization h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.banner-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.banner-form input[type="text"],
+.banner-form input[type="number"],
+.banner-form input[type="color"],
+.banner-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.display-options,
+.gender-colors,
+.style-colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.display-options label,
+.gender-colors label,
+.style-colors label {
+    font-weight: normal;
+    margin-bottom: 0;
+    flex-basis: calc(50% - 10px); /* Two items per row with gap */
+    display: flex;
+    align-items: center;
+}
+
+.display-options input[type="number"],
+.gender-colors input[type="color"],
+.style-colors input[type="color"] {
+    width: auto;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.display-options input[type="checkbox"] {
+    margin-left: 5px;
+    width: auto;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn.ghost {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn.primary {
+    background-color: #007bff;
+    color: white;
+}
+

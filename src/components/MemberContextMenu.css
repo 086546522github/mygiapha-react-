@@ -1,0 +1,33 @@
+/* src/components/MemberContextMenu.css */
+.member-context-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 200px;
+    font-family: Arial, sans-serif;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-item.danger {
+    color: #dc3545;
+}
+
+.menu-item.danger:hover {
+    background-color: #ffe0e3;
+}

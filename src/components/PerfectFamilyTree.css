@@ -1,0 +1,733 @@
+/* Perfect Family Tree - Giống hệt hình */
+
+.perfect-family-tree {
+  min-height: 100vh;
+  background: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/* Header */
+.header {
+  background: white;
+  padding: 15px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-back {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 9px 17px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Main Content */
+.main-content {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Empty Tree */
+.empty-tree {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.empty-tree h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.empty-tree p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+/* Family Tree */
+.family-tree {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  min-height: 600px;
+}
+
+.tree-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Root generation - horizontal layout */
+.tree-branch > .member-card:first-child {
+  margin-bottom: 20px;
+}
+
+/* Spouse section - horizontal */
+.spouse-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/* Children section - horizontal grid */
+.children-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px dashed #e0e0e0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.children-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.child-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-width: 200px;
+}
+
+/* Grandchildren - horizontal layout */
+.grandchildren-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #e0e0e0;
+  width: 100%;
+}
+
+.grandchildren-grid {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.grandchild-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+}
+
+/* Great grandchildren - horizontal layout */
+.great-grandchildren-section {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e0e0;
+  width: 100%;
+}
+
+.great-grandchildren-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Member Card - Giống hình */
+.member-card {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  min-width: 180px;
+  margin: 8px;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
+}
+
+.member-content {
+  cursor: pointer;
+  text-align: center;
+}
+
+.member-avatar {
+  margin-bottom: 8px;
+}
+
+.member-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto;
+}
+
+.avatar-placeholder.male {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+}
+
+.avatar-placeholder.female {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.member-info {
+  margin-bottom: 8px;
+}
+
+.member-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 3px 0;
+}
+
+.member-birth {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0 0 3px 0;
+}
+
+.member-occupation {
+  color: #007bff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.member-actions {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.action-btn {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.7rem;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.edit-btn:hover {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.delete-btn:hover {
+  background: #ffebee;
+  border-color: #f44336;
+}
+
+/* Connectors */
+.spouse-connector {
+  font-size: 1.2rem;
+  color: #e74c3c;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.children-connector {
+  text-align: center;
+  font-size: 1rem;
+  color: #28a745;
+  margin-bottom: 15px;
+  background: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grandchildren-connector {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ffc107;
+  margin-bottom: 12px;
+  background: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.great-grandchildren-connector {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #fd7e14;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Child spouse layout */
+.child-spouse {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Context Menu - Giống hình */
+.context-menu {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e74c3c;
+  overflow: hidden;
+  z-index: 10000;
+  min-width: 180px;
+}
+
+.context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+}
+
+.context-menu-item:last-child {
+  border-bottom: none;
+}
+
+.context-menu-item:hover {
+  background: #f8f9fa;
+}
+
+.context-icon {
+  font-size: 1rem;
+  width: 16px;
+  text-align: center;
+}
+
+.context-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: transparent;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 15px;
+  padding: 0;
+  max-width: 550px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e0e0e0;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border-radius: 15px 15px 0 0;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-form {
+  padding: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* View Content */
+.view-content {
+  padding: 25px;
+}
+
+.member-detail {
+  text-align: center;
+}
+
+.detail-avatar {
+  margin-bottom: 18px;
+}
+
+.detail-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
+}
+
+.detail-avatar .avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
+.member-detail h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.detail-info {
+  text-align: left;
+  background: #f8f9fa;
+  padding: 18px;
+  border-radius: 8px;
+}
+
+.detail-info p {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.bio-section {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.bio-section p {
+  font-style: italic;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .header-left {
+    justify-content: center;
+  }
+  
+  .header-right {
+    justify-content: center;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Mobile tree layout */
+  .children-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .grandchildren-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .great-grandchildren-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .spouse-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .child-spouse {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .child-member {
+    min-width: 150px;
+  }
+  
+  .grandchild-member {
+    min-width: 140px;
+  }
+  
+  .modal {
+    margin: 10px;
+    max-height: 95vh;
+  }
+  
+  .modal-form {
+    padding: 20px;
+  }
+  
+  .context-menu {
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 15px;
+  }
+  
+  .member-card {
+    min-width: 150px;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .header-actions button {
+    width: 100%;
+  }
+}

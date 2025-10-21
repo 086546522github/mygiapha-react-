@@ -1,0 +1,93 @@
+/* src/components/MemberDetailModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-form input[type="text"],
+.modal-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.modal-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-form input[type="file"] {
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn.ghost {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn.ghost:hover {
+    background-color: #e6f2ff;
+}
+
+.btn.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+}
